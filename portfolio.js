@@ -25,16 +25,17 @@ $(document).ready(function(){
 
     //typing animation script
     var typed=new Typed(".typing" ,{
-        strings: [ "Aspiring Software Engineer","Programmer", "Developer","Explorer", "Designer", "Freelancer", ],
+        strings: [ "Aspiring Software Engineer","Programmer", "Developer","Problem solving Enthusiast","Explorer", "Designer", ],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed=new Typed(".typing-2" ,{
-        strings: ["Programmer", "Developer", "Explorer", "Designer", "Freelancer",  "Aspiring Software Engineer"],
+        strings: ["Programmer", "Developer", "Explorer", "Designer","Problem solving Enthusiast","Aspiring Software Engineer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
+
 });
