@@ -95,7 +95,7 @@ html{
 /* home section styling */
 .home{
     display: flex;
-    background: url("photo2.jpg") no-repeat center; 
+    background: url("image1.jpg") no-repeat center; 
     height: 100vh;
     color: #fff;
     min-height:500px;
@@ -677,3 +677,4 @@ footer span a:hover{
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+
