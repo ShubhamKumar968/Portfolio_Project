@@ -21,8 +21,8 @@ const initialProjects = [
     description: "A modern, highly responsive personal portfolio website engineered with Node.js, Express, EJS, and MVC Architecture featuring glassmorphism UI & contact APIs.",
     image: "images/port2.png",
     tags: ["MVC Architecture", "Node.js", "Express", "EJS", "JavaScript", "CSS3"],
-    link: "https://github.com/ShubhamKumar968",
-    github: "https://github.com/ShubhamKumar968",
+    link: "https://portfolio-shubham-dybt.onrender.com",
+    github: "https://github.com/ShubhamKumar968/Portfolio_Project",
     featured: true
   },
   {

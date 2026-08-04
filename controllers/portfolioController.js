@@ -16,7 +16,7 @@ exports.renderHome = async (req, res) => {
       phone: "+91 9682974910",
       email: "shubhamkgr06@gmail.com",
       mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sasaram,+Bihar,+India",
-      resumeUrl: "https://drive.google.com/file/d/1ArI_yFaVHG70VElvMbz9g0doetmYtBTi/view?usp=drivesdk",
+      resumeUrl: "https://drive.google.com/file/d/1aTYKIsEjB-fYGcaN504-5Ud8z3coO5A5/view?usp=drivesdk",
       socialLinks: {
         linkedin: "https://www.linkedin.com/in/shubham-kumar-40518828a/",
         github: "https://github.com/ShubhamKumar968/",
