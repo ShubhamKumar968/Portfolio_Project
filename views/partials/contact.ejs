@@ -1,0 +1,150 @@
+<section class="section contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-subtitle">Have a project idea or question? Send me a message directly!</div>
+
+        <div class="contact-grid">
+            <div class="contact-info-col">
+                <h3 class="contact-heading">Get In Touch</h3>
+                <p class="contact-intro">
+                    I'm always open to discussing software engineering roles, collaboration on open-source projects, or tech innovations. Feel free to reach out!
+                </p>
+
+                <div class="contact-methods">
+                    <!-- Name Card -->
+                    <div class="contact-method-card">
+                        <div class="contact-icon"><i class="fas fa-user"></i></div>
+                        <div>
+                            <div class="contact-label">Name</div>
+                            <div class="contact-val"><%= profile.name %></div>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-method-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-val">
+                                <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone / Mobile Card -->
+                    <div class="contact-method-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="contact-label">Mobile / Phone</div>
+                            <div class="contact-val">
+                                <a href="tel:<%= (profile.phone || '+919682974910').replace(/\s+/g, '') %>"><%= profile.phone || '+91 9682974910' %></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workable Location Google Maps Link -->
+                    <a href="<%= profile.mapsUrl || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(profile.location || 'Sasaram, Bihar, India') %>" target="_blank" rel="noopener noreferrer" class="contact-method-card contact-method-link" title="Click to view location in Google Maps">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <div class="contact-label">Location (Click for Map)</div>
+                            <div class="contact-val">
+                                <%= profile.location %> <i class="fa-solid fa-arrow-up-right-from-square maps-badge-icon"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-social-box">
+                    <h4>Connect on Social Platforms</h4>
+                    <div class="contact-social-links">
+                        <a href="<%= profile.socialLinks.linkedin %>" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="<%= profile.socialLinks.github %>" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="<%= profile.socialLinks.twitter %>" target="_blank" rel="noopener noreferrer" title="Twitter / X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="<%= profile.socialLinks.codolio %>" target="_blank" rel="noopener noreferrer" title="Codolio">
+                            <i class="fa-solid fa-code"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-col">
+                <div class="form-card">
+                    <h3 class="form-title">Send Me a Message</h3>
+                    
+                    <!-- Toast Notification Banner -->
+                    <div id="contactFormAlert" class="form-alert" style="display: none;"></div>
+
+                    <form id="contactForm" action="/api/contact" method="POST" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Rahul Kumar" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="rahul@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Describe your project or message details..." required></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Floating Laptop & Communication Bubbles Art Column (Matching Rani Reference) -->
+            <div class="contact-visual-col">
+                <div class="contact-visual-decor">
+                    <div class="contact-laptop-container">
+                        <!-- Floating Bubble 1: Analytics -->
+                        <div class="floating-bubble bubble-1" title="Analytics & Insights">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <!-- Floating Bubble 2: Speech Chat -->
+                        <div class="floating-bubble bubble-2" title="Let's Talk">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+
+                        <!-- Floating Bubble 3: Mail Envelope -->
+                        <div class="floating-bubble bubble-3" title="Send Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <!-- Floating Bubble 4: Folder -->
+                        <div class="floating-bubble bubble-4" title="Projects & Files">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+
+                        <!-- Floating Bubble 5: Document -->
+                        <div class="floating-bubble bubble-5" title="Resume & Docs">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <!-- Main Laptop Circle Art Base -->
+                        <div class="laptop-circle-base">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

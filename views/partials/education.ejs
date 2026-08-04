@@ -1,0 +1,20 @@
+<section class="section education" id="education">
+    <div class="container">
+        <h2 class="section-title">Education & Milestones</h2>
+        <div class="section-subtitle">Academic journey and national competitive milestones</div>
+
+        <div class="education-grid">
+            <% education.forEach(edu => { %>
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fa-solid <%= edu.icon %>"></i>
+                    </div>
+                    <div class="edu-badge"><%= edu.period %></div>
+                    <h3 class="edu-degree"><%= edu.degree %></h3>
+                    <h4 class="edu-institution"><%= edu.institution %></h4>
+                    <p class="edu-detail"><%= edu.detail %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>

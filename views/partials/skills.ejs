@@ -1,0 +1,32 @@
+<section class="section skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-subtitle">Technologies, tools, and languages I build with — (Hover or Click any skill card to pause scrolling)</div>
+
+        <div class="skills-marquee-wrapper" id="skillsMarqueeWrapper">
+            <div class="skills-marquee-track" id="skillsMarqueeTrack">
+                <% 
+                  function getSkillImg(logo) {
+                      if (!logo) return '/images/html.jpg';
+                      if (logo.startsWith('http://') || logo.startsWith('https://')) return logo;
+                      if (logo.startsWith('/')) return logo;
+                      return '/' + logo;
+                  }
+                  // Render skills array twice for a seamless infinite loop marquee
+                  const displaySkills = [...skills, ...skills];
+                %>
+                <% displaySkills.forEach((skill, idx) => { %>
+                    <div class="dynamic-skill-card marquee-card" data-index="<%= idx %>" title="<%= skill.name %> — Click to pause / resume scroll">
+                        <div class="skill-icon-box">
+                            <img src="<%= getSkillImg(skill.logo) %>" alt="<%= skill.name %>" class="dynamic-skill-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="skill-fallback-icon" style="display: none;">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                        </div>
+                        <h4 class="dynamic-skill-name"><%= skill.name %></h4>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</section>

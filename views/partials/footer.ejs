@@ -1,0 +1,26 @@
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#home">Portfo<span class="logo-accent">lio.</span></a>
+        </div>
+        <p class="footer-text">
+            Designed & Developed by <a href="#home"><%= profile.name %></a> &copy; <%= new Date().getFullYear() %> All rights reserved.
+        </p>
+        <div class="footer-socials">
+            <a href="<%= profile.socialLinks.linkedin %>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="<%= profile.socialLinks.github %>" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="<%= profile.socialLinks.twitter %>" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="<%= profile.socialLinks.codolio %>" target="_blank" rel="noopener noreferrer" aria-label="Codolio"><i class="fa-solid fa-code"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top-btn" id="scrollTopBtn" title="Back to Top">
+    <i class="fa-solid fa-angle-up"></i>
+</div>
+
+<!-- Custom Main JS -->
+<script src="/js/main.js"></script>
+</body>
+</html>

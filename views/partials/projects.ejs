@@ -1,0 +1,65 @@
+<section class="section project" id="project">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-subtitle">Click any project card to view description & tech stack</div>
+
+        <!-- Main Homepage Featured Projects Grid (First 3 Projects) -->
+        <div class="projects-grid">
+            <% projects.slice(0, 3).forEach(project => { %>
+                <div class="rani-project-card" data-project-id="<%= project.id %>" title="Click to view details / preview">
+                    <!-- Project Title Header -->
+                    <div class="rani-card-header">
+                        <h3 class="rani-project-title"><%= project.title %></h3>
+                    </div>
+
+                    <!-- Card Body Wrapper (Swaps between Image and Description drawer) -->
+                    <div class="rani-card-body-wrapper">
+                        <!-- Default State: Image Preview -->
+                        <div class="rani-img-box">
+                            <img src="<%= (project.image && (project.image.startsWith('http://') || project.image.startsWith('https://'))) ? project.image : (project.image.startsWith('/') ? project.image : '/' + (project.image.startsWith('images/') ? project.image : 'images/' + project.image)) %>" alt="<%= project.title %>" class="rani-project-img" onerror="this.src='/images/port1.png'">
+                        </div>
+
+                        <!-- Flipped State: Description Drawer (Slides in from Left) -->
+                        <div class="rani-desc-box">
+                            <p class="rani-project-desc"><%= project.description %></p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action & Tech Stack Bar -->
+                    <div class="rani-bottom-bar">
+                        <!-- Action Buttons (Live Demo & Source Code) -->
+                        <div class="rani-action-btns">
+                            <% if (project.link && project.link !== '#') { %>
+                                <a href="<%= project.link %>" target="_blank" rel="noopener noreferrer" class="rani-action-circle" title="Live Demo" onclick="event.stopPropagation();">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>
+                            <% } %>
+                            <% if (project.github) { %>
+                                <a href="<%= project.github %>" target="_blank" rel="noopener noreferrer" class="rani-action-circle" title="Source Code" onclick="event.stopPropagation();">
+                                    <i class="fa-solid fa-code"></i>
+                                </a>
+                            <% } %>
+                        </div>
+
+                        <!-- Tech Stack Drawer (Slides in from Right on Click/Toggle) -->
+                        <div class="rani-tech-drawer">
+                            <ul class="rani-tech-list">
+                                <% project.tags.forEach(tag => { %>
+                                    <li><%= tag %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- View All Projects Button (Redirects to /projects Page) -->
+        <div class="projects-footer">
+            <a href="/projects" class="view-all-btn" aria-label="View All Projects">
+                <span>View All</span>
+                <span class="view-all-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>

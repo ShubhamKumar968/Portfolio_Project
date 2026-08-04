@@ -1,0 +1,18 @@
+<section class="section services" id="services">
+    <div class="container">
+        <h2 class="section-title">My Services</h2>
+        <div class="section-subtitle">High-quality technical expertise and digital solutions</div>
+
+        <div class="services-grid">
+            <% services.forEach(service => { %>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas <%= service.icon %>"></i>
+                    </div>
+                    <h3 class="service-title"><%= service.title %></h3>
+                    <p class="service-description"><%= service.description %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>

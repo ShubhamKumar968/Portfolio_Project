@@ -1,0 +1,57 @@
+<section class="hero" id="home">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span> Available for Opportunities
+            </div>
+            <% const nameParts = (profile.name || '').split(' '); %>
+            <h1 class="hero-name">
+                <span class="gradient-name-1"><%= nameParts[0] %></span>
+                <% if (nameParts.length > 1) { %>
+                    <span class="gradient-name-2"><%= nameParts.slice(1).join(' ') %></span>
+                <% } %>
+            </h1>
+            <div class="hero-typing-box">
+                And I'm a <span class="typing" id="typedElement"></span>
+            </div>
+            <p class="hero-description"><%= profile.bio %></p>
+            
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+                <a href="<%= profile.resumeUrl %>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    Download CV <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="<%= profile.socialLinks.linkedin %>" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="<%= profile.socialLinks.github %>" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="<%= profile.socialLinks.twitter %>" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="<%= profile.socialLinks.codolio %>" target="_blank" rel="noopener noreferrer" title="Codolio Profile" aria-label="Codolio">
+                    <i class="fa-solid fa-code"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="profile-card">
+                <div class="profile-img-wrapper">
+                    <img src="/images/photo1.jpg" alt="<%= profile.name %>" class="profile-img">
+                </div>
+                <div class="profile-floating-badge badge-top">
+                    <i class="fa-solid fa-graduation-cap"></i> NIT Patna CSE
+                </div>
+                <div class="profile-floating-badge badge-bottom">
+                    <i class="fa-solid fa-star"></i> CGPA <%= profile.cgpa.split(' ')[0] %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

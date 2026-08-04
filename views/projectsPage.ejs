@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="green">
+<%- include('partials/head') %>
+<body class="projects-standalone-page">
+    <div class="projects-page-wrapper">
+        <!-- Full Width Accent Banner Header with Home Redirect Button -->
+        <div class="projects-banner-header">
+            <a href="/" class="banner-home-btn" title="Back to Home" aria-label="Back to Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <h1 class="banner-title">Projects</h1>
+        </div>
+
+        <!-- Interactive Search Bar Container -->
+        <div class="projects-search-container">
+            <div class="projects-search-inner">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="projectSearchInput" placeholder="Search project..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Full Projects Showcase Grid -->
+        <div class="container full-projects-container">
+            <div class="projects-grid" id="fullProjectsGrid">
+                <% projects.forEach(project => { %>
+                    <div class="rani-project-card searchable-project" data-title="<%= project.title.toLowerCase() %>" data-desc="<%= project.description.toLowerCase() %>" data-tags="<%= project.tags.join(' ').toLowerCase() %>" title="Click to view details / preview">
+                        <!-- Project Title Header -->
+                        <div class="rani-card-header">
+                            <h3 class="rani-project-title"><%= project.title %></h3>
+                        </div>
+
+                        <!-- Card Body Wrapper (Swaps between Image and Description drawer) -->
+                        <div class="rani-card-body-wrapper">
+                            <!-- Default State: Image Preview -->
+                            <div class="rani-img-box">
+                                <img src="<%= (project.image && (project.image.startsWith('http://') || project.image.startsWith('https://'))) ? project.image : (project.image.startsWith('/') ? project.image : '/' + (project.image.startsWith('images/') ? project.image : 'images/' + project.image)) %>" alt="<%= project.title %>" class="rani-project-img" onerror="this.src='/images/port1.png'">
+                            </div>
+
+                            <!-- Flipped State: Description Drawer (Slides in from Left) -->
+                            <div class="rani-desc-box">
+                                <p class="rani-project-desc"><%= project.description %></p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Action & Tech Stack Bar -->
+                        <div class="rani-bottom-bar">
+                            <!-- Action Buttons -->
+                            <div class="rani-action-btns">
+                                <% if (project.link && project.link !== '#') { %>
+                                    <a href="<%= project.link %>" target="_blank" rel="noopener noreferrer" class="rani-action-circle" title="Live Demo" onclick="event.stopPropagation();">
+                                        <i class="fa-solid fa-play"></i>
+                                    </a>
+                                <% } %>
+                                <% if (project.github) { %>
+                                    <a href="<%= project.github %>" target="_blank" rel="noopener noreferrer" class="rani-action-circle" title="Source Code" onclick="event.stopPropagation();">
+                                        <i class="fa-solid fa-code"></i>
+                                    </a>
+                                <% } %>
+                            </div>
+
+                            <!-- Tech Stack Drawer -->
+                            <div class="rani-tech-drawer">
+                                <ul class="rani-tech-list">
+                                    <% project.tags.forEach(tag => { %>
+                                        <li><%= tag %></li>
+                                    <% }); %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+
+            <div id="noSearchProjects" class="no-projects-msg" style="display: none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>No matching projects found.</p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

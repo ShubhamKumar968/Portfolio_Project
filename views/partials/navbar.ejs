@@ -1,0 +1,46 @@
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#home">Portfo<span class="logo-accent">lio.</span></a>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+            <li class="nav-item"><a href="#project" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="/admin" class="nav-link admin-btn"><i class="fa-solid fa-lock"></i> Admin</a></li>
+        </ul>
+        <div class="nav-actions">
+            <!-- Accent Palette Switcher Dropdown -->
+            <div class="accent-picker-wrapper">
+                <button class="accent-picker-btn" id="accentPickerBtn" title="Change Theme Accent Color" aria-label="Theme Accent Selector">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+                <div class="accent-dropdown" id="accentDropdown">
+                    <span class="accent-title">Select Accent Theme</span>
+                    <div class="accent-options">
+                        <button class="accent-dot green" data-accent="green" title="Emerald Green"></button>
+                        <button class="accent-dot rose" data-accent="rose" title="Rose Red"></button>
+                        <button class="accent-dot purple" data-accent="purple" title="Electric Violet"></button>
+                        <button class="accent-dot cyan" data-accent="cyan" title="Sky Cyan"></button>
+                        <button class="accent-dot orange" data-accent="orange" title="Sunset Orange"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark/Light Theme Toggle -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <!-- Mobile Menu Hamburger -->
+            <div class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</nav>

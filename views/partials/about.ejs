@@ -1,0 +1,46 @@
+<section class="section about" id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-subtitle">Get to know my academic background and passions</div>
+        
+        <div class="about-grid">
+            <div class="about-image-col">
+                <div class="image-frame">
+                    <img src="/images/photo1.jpg" alt="<%= profile.name %>" class="about-img">
+                </div>
+            </div>
+            <div class="about-text-col">
+                <h3 class="about-heading">I'm Shubham from India, a <span class="typing-2"></span></h3>
+                <p class="about-bio">
+                    I am a Pre-final year student at the <strong>National Institute of Technology, Patna (NIT Patna)</strong>, pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering.
+                </p>
+                <p class="about-bio">
+                    As a CSE student, I am constantly eager to explore new technologies, build scalable real-world software solutions, and collaborate with passionate developers. On a personal level, I thrive on continuous self-improvement, problem-solving, and personal growth.
+                </p>
+
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div>
+                            <h4>Institution</h4>
+                            <p>NIT Patna (CSE)</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Academic Record</h4>
+                            <p><%= profile.cgpa %></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-actions">
+                    <a href="<%= profile.resumeUrl %>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Download Resume <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

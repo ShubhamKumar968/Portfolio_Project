@@ -1,0 +1,26 @@
+<section class="section achievements" id="achievements">
+    <div class="container">
+        <h2 class="section-title">Certifications & Achievements</h2>
+        <div class="section-subtitle">National recognition, corporate skills, and specialized training</div>
+
+        <div class="achievements-grid">
+            <% achievements.forEach(item => { %>
+                <div class="achievement-card">
+                    <div class="achievement-img-wrapper">
+                        <img src="<%= (item.image && (item.image.startsWith('http://') || item.image.startsWith('https://'))) ? item.image : (item.image.startsWith('/') ? item.image : '/' + (item.image.startsWith('images/') ? item.image : 'images/' + item.image)) %>" alt="<%= item.title %>" class="achievement-img" onerror="this.src='/images/port4.png'">
+                    </div>
+                    <div class="achievement-body">
+                        <div class="achievement-org"><%= item.organization %></div>
+                        <h3 class="achievement-title"><%= item.title %></h3>
+                        <p class="achievement-description"><%= item.description %></p>
+                        <% if (item.link) { %>
+                            <a href="<%= item.link %>" target="_blank" rel="noopener noreferrer" class="achievement-link">
+                                View Certificate <i class="fa-solid fa-external-link-alt"></i>
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
